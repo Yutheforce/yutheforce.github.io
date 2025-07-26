@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Authentication Complete</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
-<body style="text-align: center; font-family: sans-serif; padding-top: 40px;">
-  <h2>✅ Authentication Complete</h2>
-  <p>This window will close automatically.</p>
-
-  <script>
-    setTimeout(() => {
-      window.close();
-    }, 1000);
-  </script>
-</body>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Closing...</title>
+  </head>
+  <body>
+    <script>
+      // Notify parent window (main app)
+      if (window.opener) {
+        window.opener.postMessage({ status: 'done' }, '*');
+      }
+      // Close the popup/tab after 1 second
+      setTimeout(() => {
+        window.close();
+      }, 1000);
+    </script>
+  </body>
 </html>
