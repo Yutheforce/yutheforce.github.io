@@ -1,27 +1,18 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>✅ Registration Complete</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      body {
-        font-family: sans-serif;
-        text-align: center;
-        margin-top: 40px;
-      }
-    </style>
-  </head>
-  <body>
-    <h2>Registration Complete</h2>
-    <p>This window will close automatically.</p>
+<head>
+  <meta charset="UTF-8" />
+  <title>Authentication Complete</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body style="text-align: center; font-family: sans-serif; padding-top: 40px;">
+  <h2>✅ Authentication Complete</h2>
+  <p>This window will close automatically.</p>
 
-    <script>
-      if (window.opener) {
-        window.opener.postMessage({ status: 'done' }, '*');
-      }
-      setTimeout(() => window.close(), 1500);
-    </script>
-  </body>
+  <script>
+    setTimeout(() => {
+      window.close();
+    }, 1000);
+  </script>
+</body>
 </html>
